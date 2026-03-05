@@ -1,43 +1,52 @@
 # atomicBlue-Desktop &nbsp; [![bluebuild build badge](https://github.com/hovarak/atomicblue-desktop/actions/workflows/build.yml/badge.svg)](https://github.com/hovarak/atomicblue-desktop/actions/workflows/build.yml)
 
-See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
+A personal **Wayblue-based** Atomic desktop image built with **BlueBuild**.
 
-After setup, it is recommended you update this README to describe your custom image.
+- **Base image:** `ghcr.io/wayblueorg/hyprland-nvidia-open`
+- **Desktop:** Hyprland (Wayland)
+- **GPU:** NVIDIA (Open kernel modules)
 
-## Installation
+This repository contains the recipe + system configuration used to build the image and publish it to **GHCR**.
 
-> [!WARNING]  
-> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion.
+## What’s included
 
-To rebase an existing atomic Fedora installation to the latest build:
+### System services
+Enabled by default:
+- `bluetooth.service`
+- `tailscaled.service`
 
-- First rebase to the unsigned image, to get the proper signing keys and policies installed:
-  ```
-  rpm-ostree rebase ostree-unverified-registry:ghcr.io/hovarak/atomicblue-desktop:latest
-  ```
-- Reboot to complete the rebase:
-  ```
-  systemctl reboot
-  ```
-- Then rebase to the signed image, like so:
-  ```
-  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/hovarak/atomicblue-desktop:latest
-  ```
-- Reboot again to complete the installation
-  ```
-  systemctl reboot
-  ```
+> Note: Tailscale login / tailnet membership is still configured per-machine (you’ll run `tailscale up` after install). Only the daemon autostart is baked in.
 
-The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
+### Default Flatpaks
 
-## ISO
+**System-wide (baseline):**
+- `com.github.tchx84.Flatseal`
+- `io.github.flattool.Warehouse`
+- `org.kde.okular`
+- `org.kde.kate`
+- `org.libreoffice.LibreOffice`
+- `com.github.jeromerobert.pdfarranger`
 
-If build on Fedora Atomic, you can generate an offline ISO with the instructions available [here](https://blue-build.org/how-to/generate-iso/#_top). These ISOs cannot unfortunately be distributed on GitHub for free due to large sizes, so for public projects something else has to be used for hosting.
+**User scope (personal apps):**
+- `app.zen_browser.zen`
+- `com.bitwarden.desktop`
+- `com.discordapp.Discord`
+- `com.valvesoftware.Steam`
+- `md.obsidian.Obsidian`
+- `net.mullvad.MullvadBrowser`
+- `org.qbittorrent.qBittorrent`
 
-## Verification
+## Installation (rebase)
 
-These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](https://github.com/sigstore/cosign). You can verify the signature by downloading the `cosign.pub` file from this repo and running the following command:
+> [!WARNING]
+> OSTree native container rebasing is still considered experimental by Fedora. Use at your own risk:
+> https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable
 
+To rebase an existing Fedora Atomic-style install (Silverblue/Kinoite/Sericea/Wayblue, etc.) to this image:
+
+1) Rebase to the **unsigned** image first (installs signing policy/keys):
 ```bash
-cosign verify --key cosign.pub ghcr.io/hovarak/atomicblue-desktop
-```
+rpm-ostree rebase ostree-unverified-registry:ghcr.io/hovarak/atomicblue-desktop:latest
+systemctl reboot
+
+2) Optional: View my github page to load Dotfiles.
