@@ -1,0 +1,13 @@
+app.zen_browser.zen	flathub	1.19.1b
+com.bitwarden.desktop	flathub	2026.1.0
+com.discordapp.Discord	flathub	0.0.127
+com.github.jeromerobert.pdfarranger	flathub	1.12.1
+com.github.tchx84.Flatseal	flathub	2.4.0
+com.valvesoftware.Steam	flathub	1.0.0.84
+io.github.flattool.Warehouse	flathub	2.2.0
+md.obsidian.Obsidian	flathub	1.12.4
+net.mullvad.MullvadBrowser	flathub	15.0.7
+org.kde.kate	flathub	25.12.2
+org.kde.okular	flathub	25.12.2
+org.libreoffice.LibreOffice	flathub	26.2.1.2
+org.qbittorrent.qBittorrent	flathub	5.1.4

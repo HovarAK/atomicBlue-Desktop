@@ -1,0 +1,42 @@
+State: idle
+AutomaticUpdates: disabled
+Deployments:
+● ostree-image-signed:docker://ghcr.io/wayblueorg/hyprland-nvidia-open:latest (index: 0)
+                   Digest: sha256:ebf74005118421bd37ea05eedc3dae10abee7eca64b7dd21e955b9139c62613d
+                  Version: 43.20260207.0 (2026-02-07T06:14:51Z)
+               BaseCommit: f86fefc74e038c69c78a7c4ec23b4f259e8205d3efbb5ecc7f4fe35c4fda81b3
+                   Commit: 3a0b4a258bac1b0490395524896ef9811e2dd38f011a121b45237ee5f008ff9b
+                           ├─ copr:copr.fedorainfracloud.org:solopasha:hyprland (2025-11-13T06:01:02Z)
+                           ├─ copr:copr.fedorainfracloud.org:ublue-os:packages (2026-03-02T08:35:33Z)
+                           ├─ fedora (2025-10-23T03:37:20Z)
+                           ├─ mullvad-stable (2026-02-26T15:03:45Z)
+                           ├─ rpmfusion-free (2025-10-24T15:13:23Z)
+                           ├─ rpmfusion-free-updates (2026-03-02T12:29:20Z)
+                           ├─ rpmfusion-nonfree (2025-10-24T15:23:56Z)
+                           ├─ rpmfusion-nonfree-updates (2026-02-27T17:14:56Z)
+                           ├─ updates (2026-03-04T00:44:51Z)
+                           └─ updates-archive (2026-03-04T01:25:11Z)
+                   Staged: no
+                StateRoot: fedora
+          LayeredPackages: cliphist fuzzel git hyprpolkitagent hyprshot lm_sensors
+                           mullvad-vpn neovim nnn nvidia-container-toolkit nwg-look
+                           podman-compose SwayNotificationCenter tailscale zsh
+
+  ostree-image-signed:docker://ghcr.io/wayblueorg/hyprland-nvidia-open:latest (index: 1)
+                   Digest: sha256:ebf74005118421bd37ea05eedc3dae10abee7eca64b7dd21e955b9139c62613d
+                  Version: 43.20260207.0 (2026-02-07T06:14:51Z)
+               BaseCommit: f86fefc74e038c69c78a7c4ec23b4f259e8205d3efbb5ecc7f4fe35c4fda81b3
+                   Commit: 237fd85d92deb996365b7dc2ef3a2bb8eea03a65f8ab623b4005e6e4a5213603
+                           ├─ copr:copr.fedorainfracloud.org:solopasha:hyprland (2025-11-13T06:01:02Z)
+                           ├─ copr:copr.fedorainfracloud.org:ublue-os:packages (2026-03-02T08:35:33Z)
+                           ├─ fedora (2025-10-23T03:37:20Z)
+                           ├─ mullvad-stable (2026-02-26T15:03:45Z)
+                           ├─ rpmfusion-free (2025-10-24T15:13:23Z)
+                           ├─ rpmfusion-free-updates (2026-03-02T12:29:20Z)
+                           ├─ rpmfusion-nonfree (2025-10-24T15:23:56Z)
+                           ├─ rpmfusion-nonfree-updates (2026-02-27T17:14:56Z)
+                           ├─ updates (2026-03-04T00:44:51Z)
+                           └─ updates-archive (2026-03-04T01:25:11Z)
+                StateRoot: fedora
+          LayeredPackages: cliphist fuzzel git hyprpolkitagent lm_sensors mullvad-vpn
+                           neovim nnn nwg-look SwayNotificationCenter tailscale zsh
